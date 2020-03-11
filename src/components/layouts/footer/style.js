@@ -6,6 +6,7 @@ export const Container = styled.div`
     color: #616161;
     font-size: 12px;
     padding: 35px 0;
+    display: none;
     border-top: solid 1px rgba(0, 0, 0, 0.2);
   }
 
@@ -53,5 +54,10 @@ export const Container = styled.div`
     width: 18px;
     display: block;
     fill: rgb(118, 118, 118);
+  }
+  @media (min-width: 600px){
+    .links{
+      display: block;
+    }
   }
 `;

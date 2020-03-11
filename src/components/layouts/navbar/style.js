@@ -1,13 +1,24 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  .menu{
+    margin: 20px 15px 20px 0;
+  }
   .main {
     display: flex;
     justify-content: space-between;
-    padding: 31px;
     .logo {
       height: 30px;
       width: auto;
+      margin: 15px 20px 0 20px;
+    }
+    .nav-search{
+      padding: 15px 0;
     }
     .first {
       display: flex;
@@ -23,23 +34,27 @@ export const Container = styled.div`
   }
   .lists {
     display: ${props => (props.isOpen ? "block" : "none")};
-    padding: 5px 0 0 10px;
   }
   .menu-list {
     display: block;
-    padding: 10px 0 10px 31px;
+    padding: 20px 15px;
+    border-bottom: 2px solid transparent;
   }
-
+  .menu-list:hover {
+    border-bottom-color: red
+  }
+  @media (max-width: 850px) {
+    background-color: white;
+    .lists {
+      height: 100vh;
+      border-bottom: 1px solid #0000001c;
+    }
+  }
   @media (min-width: 850px) {
     display: flex;
     justify-content: space-between;
-    padding: 18px;
     border-bottom: solid rgba(0, 0, 0, 0.2) 1px;
     font-size: 15px;
-    allign-items: center;
-    .main {
-      padding: 0;
-    }
     .main .menu {
       display: none;
     }
@@ -49,7 +64,6 @@ export const Container = styled.div`
     }
     .lists a {
       color: rgb(80, 80, 80);
-      marhin-right: 10px;
     }
   }
 `;
