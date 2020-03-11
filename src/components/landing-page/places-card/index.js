@@ -13,29 +13,33 @@ export const PlacesCard = () => {
                     <div className='img-div'>
                         <img src={experiences} alt='Experiences' className='card-img' />
                     </div>
-                    <p className='description'>Norway</p>
-                    <p className='description'>2 Nights PACKAGE all inclusive</p>
+                    <p className='description-title'>Entire apartment</p>
+                    <p className='sub-description'>2 Nights PACKAGE all inclusive</p>
+                    <p><span className='price-description'>$80</span><span className='description-title'> / night</span></p>
                 </div>
                 <div className='card'>
                     <div className='img-div'>
                         <img src={experiences} alt='Experiences' className='card-img' />
                     </div>
-                    <p className='description'>Norway</p>
-                    <p className='description'>2 Nights PACKAGE all inclusive</p>
+                    <p className='description-title'>Entire apartment</p>
+                    <p className='sub-description'>2 Nights PACKAGE all inclusive</p>
+                    <p><span className='price-description'>$80</span><span className='description-title'> / night</span></p>
                 </div>
                 <div className='card'>
                     <div className='img-div'>
                         <img src={experiences} alt='Experiences' className='card-img' />
                     </div>
-                    <p className='description'>Norway</p>
-                    <p className='description'>2 Nights PACKAGE all inclusive</p>
+                    <p className='description-title'>Entire apartment</p>
+                    <p className='sub-description'>2 Nights PACKAGE all inclusive</p>
+                    <p><span className='price-description'>$80</span><span className='description-title'> / night</span></p>
                 </div>
                 <div className='card'>
                     <div className='img-div'>
                         <img src={experiences} alt='Experiences' className='card-img' />
                     </div>
-                    <p className='description'>Norway</p>
-                    <p className='description'>2 Nights PACKAGE all inclusive</p>
+                    <p className='description-title'>Entire apartment</p>
+                    <p className='sub-description'>2 Nights PACKAGE all inclusive</p>
+                    <p><span className='price-description'>$80</span><span className='description-title'> / night</span></p>
                 </div>
             </div>
         </Container>

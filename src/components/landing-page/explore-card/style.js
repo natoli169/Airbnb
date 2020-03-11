@@ -37,12 +37,13 @@ export const Container = styled.div`
   .catagoery {
     font-weight: 400;
     font-size: 1rem;
-    padding: 20px 10px;
+    padding: 16px;
   }
   @media (min-width: 550px) {
-    max-width: 90%
+    max-width: 95%
   }
   @media (min-width: 1200px) {
+    max-width: 90%;
     .card {
       flex-direction: row;
       max-width: 400px;
@@ -55,5 +56,8 @@ export const Container = styled.div`
     .catagoery {
       font-size: 1.2rem;
     }
+  }
+  @media (min-width: 2000px) {
+    max-width: 1760px;
   }
 `;

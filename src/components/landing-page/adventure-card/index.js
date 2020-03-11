@@ -16,46 +16,55 @@ export const AdventureCard = () => {
                     <div className='img-div'>
                         <img src={experiences} alt='Experiences' className='card-img' />
                     </div>
-                    <p className='description'>Norway</p>
-                    <p className='description'>2 Nights PACKAGE all inclusive</p>
-                    <p className='description'>From $68/person 3 days</p>
-                    <p className='description'>Rating</p>
+                    <p className='description-title'>Norway</p>
+                    <p className='sub-description'>2 Nights PACKAGE all inclusive</p>
+                    <p className='sub-description'>From $68/person 3 days</p>
+                    <p className='sub-description'>Rating</p>
                 </div>
                 <div className='card'>
                     <div className='img-div'>
                         <img src={experiences} alt='Experiences' className='card-img' />
                     </div>
-                    <p className='description'>Norway</p>
-                    <p className='description'>2 Nights PACKAGE all inclusive</p>
-                    <p className='description'>From $68/person 3 days</p>
-                    <p className='description'>Rating</p>
+                    <p className='description-title'>Norway</p>
+                    <p className='sub-description'>2 Nights PACKAGE all inclusive</p>
+                    <p className='sub-description'>From $68/person 3 days</p>
+                    <p className='sub-description'>Rating</p>
                 </div>
                 <div className='card'>
                     <div className='img-div'>
                         <img src={experiences} alt='Experiences' className='card-img' />
                     </div>
-                    <p className='description'>Norway</p>
-                    <p className='description'>2 Nights PACKAGE all inclusive</p>
-                    <p className='description'>From $68/person 3 days</p>
-                    <p className='description'>Rating</p>
+                    <p className='description-title'>Norway</p>
+                    <p className='sub-description'>2 Nights PACKAGE all inclusive</p>
+                    <p className='sub-description'>From $68/person 3 days</p>
+                    <p className='sub-description'>Rating</p>
                 </div>
                 <div className='card'>
                     <div className='img-div'>
                         <img src={experiences} alt='Experiences' className='card-img' />
                     </div>
-                    <p className='description'>Norway</p>
-                    <p className='description'>2 Nights PACKAGE all inclusive</p>
-                    <p className='description'>From $68/person 3 days</p>
-                    <p className='description'>Rating</p>
+                    <p className='description-title'>Norway</p>
+                    <p className='sub-description'>2 Nights PACKAGE all inclusive</p>
+                    <p className='sub-description'>From $68/person 3 days</p>
+                    <p className='sub-description'>Rating</p>
                 </div>
                 <div className='card'>
                     <div className='img-div'>
                         <img src={experiences} alt='Experiences' className='card-img' />
                     </div>
-                    <p className='description'>Norway</p>
-                    <p className='description'>2 Nights PACKAGE all inclusive</p>
-                    <p className='description'>From $68/person 3 days</p>
-                    <p className='description'>Rating</p>
+                    <p className='description-title'>Norway</p>
+                    <p className='sub-description'>2 Nights PACKAGE all inclusive</p>
+                    <p className='sub-description'>From $68/person 3 days</p>
+                    <p className='sub-description'>Rating</p>
+                </div>
+                <div className='card'>
+                    <div className='img-div'>
+                        <img src={experiences} alt='Experiences' className='card-img' />
+                    </div>
+                    <p className='description-title'>Norway</p>
+                    <p className='sub-description'>2 Nights PACKAGE all inclusive</p>
+                    <p className='sub-description'>From $68/person 3 days</p>
+                    <p className='sub-description'>Rating</p>
                 </div>
             </div>
         </Container>
