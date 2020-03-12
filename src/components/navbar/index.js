@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logo from "../../assets/logo.svg";
 import language from "../../assets/language.svg";
 import dollar from "../../assets/dollar.svg";
+import { Link } from "react-router-dom";
 
 import { Search } from "../search/index";
 import { Container } from "./style";
@@ -60,12 +61,12 @@ export const Navbar = () => {
           <a href='#' className='menu-list'>
             Help
           </a>
-          <a href='#' className='menu-list'>
+          <Link to='/signup' className='menu-list'>
             Sign up
-          </a>
-          <a href='#' className='menu-list'>
+          </Link>
+          <Link to='/login' className='menu-list'>
             Log in
-          </a>
+          </Link>
         </div>
       </Navbar.NotLogged>
       <Navbar.Logged>
