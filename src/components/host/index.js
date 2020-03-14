@@ -3,10 +3,13 @@ import HouseContext from "../../context/house/houseContext";
 import { Container } from "./style";
 
 export const Host = () => {
+  // init our house context
   const houseContext = useContext(HouseContext);
 
+  // Destructured the things we want from context
   const { addHouse } = houseContext;
 
+  // init our component state
   const [house, setHouse] = useState({
     streetAdress: "",
     zipCode: "",
@@ -26,6 +29,8 @@ export const Host = () => {
     squareFeet: "",
     houseImage: ""
   });
+
+  // Destructured the fields from house
   const {
     streetAdress,
     zipCode,
@@ -46,13 +51,15 @@ export const Host = () => {
     squareFeet
   } = house;
 
+  // Handle changes in inputs
   const onChange = e => setHouse({ ...house, [e.target.name]: e.target.value });
 
+  // Handle when we submit the form
   function onSubmit(e) {
+    // Stop the normal process of reloading
     e.preventDefault();
 
-    console.log(house);
-
+    // call our context function
     addHouse(house);
   }
 
