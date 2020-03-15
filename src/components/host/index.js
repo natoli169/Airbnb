@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import HouseContext from "../../context/house/houseContext";
+import { HouseContext } from "../../context/house/HouseState";
 import { Container } from "./style";
 
 export const Host = () => {
@@ -77,7 +77,7 @@ export const Host = () => {
             className='text-input'
             required
           />
-          <label htmlFor='streetAdress' class='form__label'>
+          <label htmlFor='streetAdress' className='form__label'>
             Street Adress
           </label>
         </div>
@@ -91,7 +91,7 @@ export const Host = () => {
             className='text-input'
             required
           />
-          <label htmlFor='zipCod' class='form__label'>
+          <label htmlFor='zipCod' className='form__label'>
             Zip code
           </label>
         </div>
@@ -105,7 +105,7 @@ export const Host = () => {
             className='text-input'
             required
           />
-          <label htmlFor='city' class='form__label'>
+          <label htmlFor='city' className='form__label'>
             City
           </label>
         </div>
@@ -120,7 +120,7 @@ export const Host = () => {
               className='text-input'
               required
             />
-            <label htmlFor='minPrice' class='form__label'>
+            <label htmlFor='minPrice' className='form__label'>
               Minimum Price
             </label>
           </div>
@@ -134,7 +134,7 @@ export const Host = () => {
               className='text-input'
               required
             />
-            <label htmlFor='maxPrice' class='form__label'>
+            <label htmlFor='maxPrice' className='form__label'>
               Maxmium Price
             </label>
           </div>
@@ -149,7 +149,7 @@ export const Host = () => {
             className='text-input'
             required
           />
-          <label htmlFor='dateSold' class='form__label'>
+          <label htmlFor='dateSold' className='form__label'>
             Date Sold
           </label>
         </div>
@@ -163,7 +163,7 @@ export const Host = () => {
             className='text-input'
             required
           />
-          <label htmlFor='state' class='form__label'>
+          <label htmlFor='state' className='form__label'>
             State
           </label>
         </div>
@@ -180,7 +180,7 @@ export const Host = () => {
               className='text-input'
               required
             />
-            <label htmlFor='bedrooms' class='form__label'>
+            <label htmlFor='bedrooms' className='form__label'>
               Bedrooms
             </label>
           </div>
@@ -196,7 +196,7 @@ export const Host = () => {
               className='text-input'
               required
             />
-            <label htmlFor='bathrooms' class='form__label'>
+            <label htmlFor='bathrooms' className='form__label'>
               Bathrooms
             </label>
           </div>
@@ -212,7 +212,7 @@ export const Host = () => {
               className='text-input'
               required
             />
-            <label htmlFor='parking' class='form__label'>
+            <label htmlFor='parking' className='form__label'>
               Parking
             </label>
           </div>
@@ -227,13 +227,13 @@ export const Host = () => {
             className='text-input'
             required
           />
-          <label htmlFor='yearBuilt' class='form__label'>
+          <label htmlFor='yearBuilt' className='form__label'>
             Year Built
           </label>
         </div>
         <div className='input-group '>
           <h5 className='sub-title'>Status</h5>
-          <div class='inputGroup'>
+          <div className='inputGroup'>
             <input
               id='sale'
               type='radio'
@@ -244,7 +244,7 @@ export const Host = () => {
             />
             <label htmlFor='sale'>For Sale</label>
           </div>
-          <div class='inputGroup'>
+          <div className='inputGroup'>
             <input
               id='rent'
               type='radio'
@@ -258,7 +258,7 @@ export const Host = () => {
         </div>
         <div className='input-group '>
           <h5 className='sub-title'>Home Type</h5>
-          <div class='inputGroup'>
+          <div className='inputGroup'>
             <input
               id='house'
               type='radio'
@@ -269,7 +269,7 @@ export const Host = () => {
             />
             <label htmlFor='house'>House</label>
           </div>
-          <div class='inputGroup'>
+          <div className='inputGroup'>
             <input
               id='condo'
               type='radio'
@@ -280,7 +280,7 @@ export const Host = () => {
             />
             <label htmlFor='condo'>Condo</label>
           </div>
-          <div class='inputGroup'>
+          <div className='inputGroup'>
             <input
               id='apartment'
               type='radio'
@@ -295,7 +295,7 @@ export const Host = () => {
         <div className='input-group '>
           <div className='first'>
             <h5 className='sub-title'>Is it an open house?</h5>
-            <div class='inputGroup'>
+            <div className='inputGroup'>
               <input
                 id='yes'
                 type='radio'
@@ -306,7 +306,7 @@ export const Host = () => {
               />
               <label htmlFor='yes'>Yes</label>
             </div>
-            <div class='inputGroup'>
+            <div className='inputGroup'>
               <input
                 id='no'
                 type='radio'
@@ -320,7 +320,7 @@ export const Host = () => {
           </div>
           <div className='second'>
             <h5 className='sub-title'>Listed by?</h5>
-            <div class='inputGroup'>
+            <div className='inputGroup'>
               <input
                 id='owner'
                 type='radio'
@@ -331,7 +331,7 @@ export const Host = () => {
               />
               <label htmlFor='owner'>Owner</label>
             </div>
-            <div class='inputGroup'>
+            <div className='inputGroup'>
               <input
                 id='agent'
                 type='radio'
@@ -355,7 +355,7 @@ export const Host = () => {
             className='text-input'
             required
           />
-          <label htmlFor='squareFeet' class='form__label'>
+          <label htmlFor='squareFeet' className='form__label'>
             Square Feet
           </label>
         </div>

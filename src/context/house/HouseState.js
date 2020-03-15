@@ -1,6 +1,6 @@
 import React, { createContext, useReducer } from "react";
 import HouseReducer from "./houseReducer";
-import { useQuery, useMutation } from "@apollo/react-hooks";
+import { withApollo } from "react-apollo";
 
 import { ADD_HOUSE_QUERY, SEARCH_HOUSES_QUERY } from "./queries";
 import { ADD_HOUSE, SET_LOADING } from "../types";
@@ -12,15 +12,12 @@ const initialState = {
 };
 
 // Create context
-const HouseContext = createContext(initialState);
+export const HouseContext = createContext(initialState);
 
-export const HouseProvider = ({ children }) => {
+const HouseProvider = ({ children, client }) => {
   const [state, dispatch] = useReducer(HouseReducer, initialState);
-
-  //Add House
+  // Add House
   const addHouse = house => {
-    // Give the query to our use mutation
-    const [createHouse, NewHouse] = useMutation(ADD_HOUSE_QUERY);
     // Get House Fields
     const {
       streetAdress,
@@ -41,48 +38,48 @@ export const HouseProvider = ({ children }) => {
       houseImage,
       squareFeet
     } = house;
-    // Give the variables for our mutation
-    createHouse({
-      variables: {
-        newHouse: {
-          streetAdress,
-          zipCode,
-          state,
-          city,
-          minPrice,
-          maxPrice,
-          dateSold,
-          bathrooms,
-          bedrooms,
-          parking,
-          yearBuilt,
-          status,
-          homeType,
-          openHouse,
-          listedBy,
-          houseImage,
-          squareFeet
+    // Give our client our query and variables
+    client
+      .mutate({
+        mutation: ADD_HOUSE_QUERY,
+        variables: {
+          newHouse: {
+            streetAdress,
+            zipCode,
+            state,
+            city,
+            minPrice,
+            maxPrice,
+            dateSold,
+            bathrooms,
+            bedrooms,
+            parking,
+            yearBuilt,
+            status,
+            homeType,
+            openHouse,
+            listedBy,
+            houseImage,
+            squareFeet
+          }
         }
-      }
-    });
-    // TODO : HANDLE THE ERROR
-    const { loading } = NewHouse;
+      })
+      .then(result => console.log(result))
+      .then(setLoading())
+      .catch(err => console.log(err));
 
-    // Handle loading state
-    if (!loading) setLoading();
+    // TODO : HANDLE THE ERROR
   };
   // Search house using places
   const searchHouses = city => {
-    // send query with variable and get data back
-    const { loading, error, data } = useQuery(SEARCH_HOUSES_QUERY, {
-      variables: { city }
-    });
-    // TODO : HANDLE THE ERROR
-    // handle our loading state
-    if (!loading) setLoading();
+    // Give our client our query and variables
+    client
+      .query({ query: SEARCH_HOUSES_QUERY, variables: { city } })
+      // Give data to reducer to change our state
+      .then(result => dispatch({ type: ADD_HOUSE, payload: result }))
+      .catch(err => console.log(err));
 
-    // Give data to reducer to change our state
-    dispatch({ type: ADD_HOUSE, payload: data });
+    // TODO : HANDLE THE ERROR
   };
 
   // Set Loading
@@ -103,4 +100,4 @@ export const HouseProvider = ({ children }) => {
   );
 };
 
-export default HouseState;
+export default withApollo(HouseProvider);
