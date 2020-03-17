@@ -1,8 +1,8 @@
 import React, { useReducer } from "react";
 import AuthContext from "./authContext";
 import authReducer from "./authReducer";
-import { useQuery, useMutation } from "@apollo/react-hooks";
-import { ADD_USER } from "../../utils/quries";
+import { withApollo } from "react-apollo";
+import { SIGNUP_MUTATION, LOGIN_MUTATION } from "./quries";
 import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
@@ -14,7 +14,7 @@ import {
   CLEAR_ERRORS
 } from "../types";
 
-const AuthState = props => {
+const AuthState = ({ children, client }) => {
   const initialState = {
     token: localStorage.getItem("token"),
     isAuthenticated: null,
@@ -25,32 +25,28 @@ const AuthState = props => {
   const [state, dispatch] = useReducer(authReducer, initialState);
 
   // Load User
+  const loadUser = () => {
+    // @todo - load token into global headers
+  };
 
   // Register User
   const register = ({ name, email, password, password2 }) => {
     // send request with the query
-    const [createUser, newUser] = useMutation(ADD_USER, {
-      update(cache, { data: { addUser } }) {
-        const data = cache.readQuery({ query: ALL_USERS });
-        cache.writeQuery({
-          query: ALL_USERS,
-          data: { user: [addUser, ...data.users] }
-        });
-      }
-    });
-    // Give the field names
-    createUser({
-      variables: {
-        newUser: {
-          name: name,
-          email: email,
-          password: password,
-          password2: password2
+    client
+      .mutate({
+        mutation: SIGNUP_MUTATION,
+        variables: {
+          newUser: {
+            name: name,
+            email: email,
+            password: password,
+            password2: password2
+          }
         }
-      }
-    });
-
-    dispatch({ type: REGISTER_SUCCESS, payload: data });
+      })
+      .then(result => dispatch({ type: REGISTER_SUCCESS, payload: result }))
+      // TODO: Register fail
+      .catch(err => console.log(err));
   };
 
   // Login User
@@ -66,12 +62,13 @@ const AuthState = props => {
         isAuthenticated: state.isAuthenticated,
         loading: state.loading,
         user: state.user,
-        error: state.error
+        error: state.error,
+        register
       }}
     >
-      {props.children}
+      {children}
     </AuthContext.Provider>
   );
 };
 
-export default AuthState;
+export default withApollo(AuthState);
