@@ -6,12 +6,12 @@ export const Container = styled.div`
   padding-left: 20px;
   margin: 80px auto;
   .title {
-    color: #222222 !important;
-    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    color: #222222;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
     margin-bottom: 5px;
-    font-weight: 600 !important;
-    font-size: 22px !important;
-    line-height: 26px !important
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 26px;
   }
   .cards {
     display: grid;
@@ -32,29 +32,29 @@ export const Container = styled.div`
     height: 100%;
   }
   .description {
-    font-size: 14px !important;
-    line-height: 24px !important;
-    color: #222222 !important;
-    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-    font-weight: 400 !important;
+    font-size: 14px;
+    line-height: 24px;
+    color: #222222;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    font-weight: 400;
     text-align: left;
     margin: 5px 0;
   }
   .description-title{
-    font-size: 10px !important;
-    line-height: 12px !important;
-    font-weight: 800 !important;
-    margin: 5px 0 !important;
-    text-transform: uppercase !important;
-    color: inherit !important;
-    cursor: pointer !important;
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 600;
+    margin: 5px 0;
+    text-transform: uppercase;
+    color: inherit;
+    cursor: pointer;
   }
   .sub-description{
-    font-size: 14px !important;
-    line-height: 18px !important;
-    word-wrap: break-word !important;
-    color: inherit !important;
-    cursor: pointer !important;
+    font-size: 14px;
+    line-height: 18px;
+    word-wrap: break-word;
+    color: inherit;
+    cursor: pointer;
     font-weight: inherit;
   }
   @media (min-width: 300px) {
@@ -75,15 +75,15 @@ export const Container = styled.div`
   }
   @media (min-width: 770px) {
     .description {
-      font-size: 16px !important;
+      font-size: 16px;
     }
     .sub-description{
-      font-size: 16px !important;
-      line-height: 20px !important;
+      font-size: 16px;
+      line-height: 20px;
     }
     .description-title{
-      font-size: 12px !important;
-      line-height: 16px !important;
+      font-size: 12px;
+      line-height: 16px;
     }
     .cards {
       grid-template-columns: repeat(3, 1fr);
@@ -95,11 +95,6 @@ export const Container = styled.div`
   @media (min-width: 800px) {
     .cards{
       grid-gap: 16px;
-    }
-  }
-  @media (min-width: 930px) {
-    .img-div{
-      // height: 45vw;
     }
   }
    @media (min-width: 1000px) {

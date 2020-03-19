@@ -19,6 +19,7 @@ export const Container = styled.div`
     }
     .nav-search{
       padding: 15px 0;
+      width: 200px;
     }
     .first {
       display: flex;

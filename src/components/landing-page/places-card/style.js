@@ -6,12 +6,12 @@ width: 100%;
   padding-left: 20px;
   margin: 80px auto;
   .title {
-    color: #222222 !important;
-    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    color: #222222;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
     margin-bottom: 5px;
-    font-weight: 600 !important;
-    font-size: 22px !important;
-    line-height: 26px !important;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 26px;
   }
   .cards {
     display: grid;
@@ -33,30 +33,35 @@ width: 100%;
     width: 100%;
   }
   .description {
-    font-size: 14px !important;
-    line-height: 24px !important;
-    color: #222222 !important;
-    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-    font-weight: 400 !important;
+    font-size: 14px;
+    line-height: 24px;
+    color: #222222;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    font-weight: 400;
     text-align: left;
     margin: 5px 0;
   }
   .description-title{
-    font-size: 12px !important;
-    line-height: 16px !important;
-    font-weight: 100 !important;
-    margin: 5px 0 !important;
-    color: #0009 !important;
-    cursor: pointer !important;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 100;
+    margin: 5px 0;
+    color: #0009;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
   .sub-description{
-    font-size: 14px !important;
-    line-height: 18px !important;
-    word-wrap: break-word !important;
-    color: inherit !important;
-    cursor: pointer !important;
+    font-size: 14px;
+    line-height: 18px;
+    word-wrap: break-word;
+    color: inherit;
+    cursor: pointer;
     font-weight: inherit;
-    margin: 5px 0 !important;
+    margin: 5px 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
   .price-description{
     font-weight: 600;
@@ -74,15 +79,15 @@ width: 100%;
   }
   @media (min-width: 770){
     .description {
-      font-size: 16px !important;
+      font-size: 16px;
     }
     .sub-description{
-      font-size: 16px !important;
-      line-height: 20px !important;
+      font-size: 16px;
+      line-height: 20px;
     }
     .description-title{
-      font-size: 14px !important;
-      line-height: 20px !important;
+      font-size: 14px;
+      line-height: 20px;
     }
   }
   @media (min-width: 970px) {
