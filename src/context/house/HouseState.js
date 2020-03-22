@@ -1,6 +1,7 @@
 import React, { createContext, useReducer } from "react";
 import HouseReducer from "./houseReducer";
 import { withApollo } from "react-apollo";
+import houseImage from "../../assets/houseImage.jpg";
 
 import { ADD_HOUSE_QUERY, SEARCH_HOUSES_QUERY } from "./queries";
 import { ADD_HOUSE, SET_LOADING } from "../types";
@@ -8,6 +9,25 @@ import { ADD_HOUSE, SET_LOADING } from "../types";
 // Initialize our state
 const initialState = {
   houses: [],
+  house: {
+    streetAdress: "93 York St.Saratoga Springs, NY 12866",
+    zipCode: "72716",
+    city: "Ney York",
+    state: "Ney york",
+    minPrice: "100000",
+    maxPrice: "125000",
+    dateSold: "",
+    bathrooms: "3",
+    bedrooms: "4",
+    parking: "2",
+    yearBuilt: "06/13/1990",
+    status: "sale",
+    homeType: "House",
+    openHouse: "yes",
+    listedBy: "owner",
+    squareFeet: "1000",
+    houseImage: houseImage
+  },
   loading: true
 };
 
@@ -91,6 +111,7 @@ const HouseProvider = ({ children, client }) => {
       value={{
         houses: state.houses,
         loading: state.loading,
+        house: state.house,
         addHouse,
         searchHouses
       }}
