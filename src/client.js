@@ -4,6 +4,7 @@ import { InMemoryCache } from "apollo-boost";
 
 const link = createHttpLink({ uri: "/graphql" });
 const cache = new InMemoryCache();
+
 const client = new ApolloClient({
   link,
   cache

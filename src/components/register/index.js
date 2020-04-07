@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Container } from "./style";
 import signup from "../../assets/signup.jpg";
 import AuthContext from "../../context/auth/authContext";
 
-export const Register = () => {
+export const Register = props => {
   const authContext = useContext(AuthContext);
 
   const { register, error, clearErrors, isAuthenticated } = authContext;
